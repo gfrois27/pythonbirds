@@ -21,7 +21,7 @@ A Direção terá a responsabilidade de controlar a direcao.Ela oferece os segui
     EXEMPLO:
     >>>#testando motor
     >>> motor = Motor()
-   0
+    0
     >>> motor.velocidade
     1
     >>>motor = acelerar()
@@ -65,7 +65,47 @@ A Direção terá a responsabilidade de controlar a direcao.Ela oferece os segui
 >>> direcao.girar_a_esquerda()
 >>> direcao.valor
 'norte'
+>>> carro = Carro(direcao,motor)
+>>> carro.calcular_velocidade()
+0
+>>> carro.acelerar()
+>>> carro.calcular_velocidade()
+1
+>>> carro.acelerar()
+>>> carro.calcular_velocidade()
+2
+>>> carro.frar()
+>>> carro.calcular_velocidade()
+0
+>>> carro.calcular_direcao()
+'Norte'
+>>> carro.girar_a_direita()
+>>> carro.calcular_direcao()
+'leste'
+>>> carro.girar_a_esquerda()
+>>> carro.calcular_direcao()
+'norte'
+>>> carro.girar_a_esquerda()
+>>> carro.calcular_direcao()
+'oeste'
 
+
+class carro :
+    def __init__(self,direcao,motor):
+        self.motor = motor
+        self.direcao = direcao
+
+    def calcular_velocidade(self):
+        return self.motor.velocidade
+    def acelerar(self):
+        self.motor.acelerar()
+    def frar(self):
+        self.motor.frear()
+
+    def calcular_direcao(self):
+        self.direcao.valor()
+
+        
 
 
   NORTE = 'norte'
